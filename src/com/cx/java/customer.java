@@ -15,6 +15,7 @@ public class customer {
         System.out.println("push test");
         System.out.println("pull test");
         System.out.println("gitee test");
+        System.out.println("gitee test2");        
     }
 
 }
