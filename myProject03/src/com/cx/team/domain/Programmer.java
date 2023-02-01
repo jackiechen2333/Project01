@@ -8,14 +8,20 @@ import com.cx.team.service.Status;
  */
 public class Programmer extends Employee{
     private int memberId;
-    private Status status;
+    private Status status = Status.FREE;
     private Equipment equipment;
+
+    @Override
+    public String toString() {
+        return getDetails() + "\t程序员\t" + status + "\t\t\t" + equipment.getDescription();
+    }
 
     public Programmer() {
     }
 
-    public Programmer(int id, String name, int age, double salary, Equipment equipment) {
+    public Programmer(int id, String name, int age, double salary,Equipment equipment) {
         super(id, name, age, salary);
+        this.status = status;
         this.equipment = equipment;
     }
 
@@ -41,5 +47,13 @@ public class Programmer extends Employee{
 
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
+    }
+
+    protected String getMemberDetails() {
+        return getMemberId() + "/" + getDetails();
+    }
+
+    public String getDetailsForTeam(){
+        return getMemberDetails() + "\t程序员";
     }
 }

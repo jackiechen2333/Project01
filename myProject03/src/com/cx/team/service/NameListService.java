@@ -20,6 +20,7 @@ public class NameListService {
             String name = EMPLOYEES[i][2];
             int age = Integer.parseInt(EMPLOYEES[i][3]);
             double salary = Double.parseDouble(EMPLOYEES[i][4]);
+
             Equipment equipment = null;
             double bonus;
             int stock;
@@ -54,7 +55,7 @@ public class NameListService {
             case PC:
                 return new PC(EQIPMENTS[index][1],EQIPMENTS[index][2]);
             case NOTEBOOK:
-                return new NoteBook(EQIPMENTS[index][1],Double.parseDouble(EQIPMENTS[index][2]));
+                return new NoteBook(EQIPMENTS[index][1],Integer.parseInt(EQIPMENTS[index][2]));
             case PRINTER:
                 return new Printer(EQIPMENTS[index][1],EQIPMENTS[index][2]);
         }
@@ -62,10 +63,14 @@ public class NameListService {
     }
 
     public Employee[] getAllEmployees(){
-        return null;
+        return employees;
     }
 
-    public Employee getEmployee(int id){
-        return null;
+    public Employee getEmployee(int id) throws TeamException{
+        for (Employee e : employees) {
+            if (e.getId() == id)
+                return e;
+        }
+        throw  new TeamException("该员工不存在");
     }
 }

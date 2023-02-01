@@ -8,6 +8,11 @@ public class Architect extends Designer{
 
     private int stock;
 
+    @Override
+    public String toString() {
+        return getDetails() + "\t架构师\t" + getStatus() + "\t" + getBonus() + "\t" + stock + "\t" +getEquipment().getDescription();
+    }
+
     public Architect() {
     }
 
@@ -22,5 +27,10 @@ public class Architect extends Designer{
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getDetailsForTeam() {
+        return getMemberDetails() + "\t架构师\t" +
+                getBonus() + "\t" + getStock();
     }
 }

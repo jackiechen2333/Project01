@@ -10,6 +10,14 @@ public class Employee {
     private int age;
     private double salary;
 
+    public String getDetails(){
+        return id + "\t" + name + "\t" + age + "\t" + salary;
+    }
+
+    @Override
+    public String toString() {
+        return  getDetails();
+    }
 
     public Employee() {
     }

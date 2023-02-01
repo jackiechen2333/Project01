@@ -12,11 +12,16 @@ public class Status {
         this.NAME = NAME;
     }
 
-    private static final Status FREE = new Status("FREE");
-    private static final Status BUSY = new Status("BUSY");
-    private static final Status VOCATION = new Status("VOCATION");
+    public static final Status FREE = new Status("FREE");
+    public static final Status BUSY = new Status("BUSY");
+    public static final Status VOCATION = new Status("VOCATION");
 
     public String getNAME() {
         return NAME;
+    }
+
+    @Override
+    public String toString() {
+        return  NAME;
     }
 }

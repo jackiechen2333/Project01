@@ -7,6 +7,11 @@ package com.cx.team.domain;
 public class Designer extends Programmer{
     private double bonus;
 
+    @Override
+    public String toString() {
+        return getDetails() + "\t设计师\t" + getStatus() + "\t" + bonus + "\t\t" + getEquipment().getDescription();
+    }
+
     public Designer() {
     }
 
@@ -21,5 +26,9 @@ public class Designer extends Programmer{
 
     public void setBonus(double bonus) {
         this.bonus = bonus;
+    }
+
+    public String getDetailsForTeam() {
+        return getMemberDetails() + "\t设计师\t" + getBonus();
     }
 }
